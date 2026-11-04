@@ -1,0 +1,11 @@
+Metric,Value
+Mean Absolute Error (MAE),1.6466656197147496
+Root Mean Squared Error (RMSE),2.3783697847961363
+R-squared (R2),0.7241341236974023
+Cross-validation mean R2,0.8038522286610306
+Cross-validation standard deviation,0.03167539726689191
+Best tuning CV RMSE,2.019487069172017
+Best fit_intercept setting,True
+Training records,316
+Testing records,79
+Total records used,395
