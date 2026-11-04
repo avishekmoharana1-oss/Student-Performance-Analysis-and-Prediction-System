@@ -2,23 +2,24 @@
 
 ## 1. Project Overview
 
-The Student Performance Analysis and Prediction System is a machine learning project developed using Python. It analyses student academic data, identifies performance patterns, and predicts final Mathematics grades using a Linear Regression model.
+The **Student Performance Analysis and Prediction System** is a Machine Learning project developed using Python.
 
-The project includes data preprocessing, exploratory data analysis, data visualization, model training, prediction, hyperparameter tuning, and performance evaluation.
+The project analyses student academic data, identifies patterns that may affect academic performance, and predicts students' final Mathematics grades using a Linear Regression model.
+
+The main objective is to understand student performance through data analysis, visualization, and machine learning techniques.
 
 ## 2. Dataset Description
 
-This project uses the Student Performance Mathematics dataset from the UCI Machine Learning Repository.
+This project uses the **Student Performance Dataset** from the UCI Machine Learning Repository.
 
-- **Dataset file:** `data/student_performance_dataset.csv`
-- **Dataset source:** UCI Student Performance Dataset
-- **Target variable:** `G3` (Final Mathematics Grade)
-- **Dataset size:** 395 student records and 33 columns
-- **Grade range:** 0 to 20
+- Dataset file: `student_performance_dataset.csv`
+- Total records: 395
+- Target variable: `G3` (Final Grade)
+- Important input features: `G1`, `G2`, `studytime`, and `absences`
+- Data format: CSV
+- Separator: Semicolon (`;`)
 
-The dataset contains demographic characteristics, family background, study habits, school-related information, and academic performance.
-
-The model uses available features other than `G3` to predict the final grade. These include earlier examination grades `G1` and `G2`.
+The dataset contains students' academic and personal information that can be used to analyse and predict their final grades.
 
 ## 3. Technologies Used
 
@@ -33,24 +34,20 @@ The model uses available features other than `G3` to predict the final grade. Th
 
 ## 4. Project Features
 
-- Dataset loading and inspection
-- Data cleaning and duplicate checking
+- Dataset loading and verification
+- Data cleaning and preprocessing
 - Missing-value analysis
+- Duplicate record checking
 - Descriptive statistical analysis
-- Exploratory Data Analysis (EDA)
 - Data visualization
-- Histogram and bar chart generation
-- Scatter plot and box plot generation
-- Correlation heatmap
+- Correlation analysis
+- Student performance analysis
 - Linear Regression model training
-- Data preprocessing using Scikit-learn pipelines
-- Hyperparameter tuning using GridSearchCV
-- Five-fold cross-validation
-- Model evaluation using MAE, RMSE, and R²
-- Actual-versus-predicted grade comparison
-- Exporting evaluation results and visualizations
+- Hyperparameter tuning
+- Model evaluation
+- Actual vs. predicted grade comparison
 
-## 5. Project Structure
+## 5. Project Folder Structure
 
 ```text
 Student-Performance-Analysis-and-Prediction-System/
@@ -99,31 +96,27 @@ Student-Performance-Analysis-and-Prediction-System/
 └── requirements.txt
 ```
 
-## 6. Installation and Execution
+## 6. Installation and Setup
 
-### Step 1: Install Python
-
-Install Python if it is not already installed.
-
-### Step 2: Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/avishekmoharana1-oss/Student-Performance-Analysis-and-Prediction-System.git
 ```
 
-### Step 3: Open the Project
+### Step 2: Open the Project Folder
 
-Open the downloaded project folder in Visual Studio Code.
+```bash
+cd Student-Performance-Analysis-and-Prediction-System
+```
 
-### Step 4: Create a Virtual Environment
-
-Open the VS Code terminal and run:
+### Step 3: Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-### Step 5: Activate the Virtual Environment
+### Step 4: Activate the Virtual Environment
 
 For Windows PowerShell:
 
@@ -131,133 +124,92 @@ For Windows PowerShell:
 .\venv\Scripts\Activate.ps1
 ```
 
-### Step 6: Install Dependencies
+### Step 5: Install Required Libraries
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 7: Run the Main Python Program
+### Step 6: Run the Project
 
 ```bash
 python main.py
 ```
 
-### Step 8: Open the Jupyter Notebook
-
-Open the following file in Visual Studio Code:
-
-`notebooks/student_performance_analysis.ipynb`
-
-Select the project's Python environment as the notebook kernel and execute the cells in order.
-
-If Jupyter is not installed, run:
-
-```bash
-pip install jupyter ipykernel
-```
-
-### Step 9: View the Results
-
-After successful execution, check:
-
-- `outputs/visualizations/` — generated charts.
-- `outputs/evaluation_results/` — evaluation metrics, descriptive statistics, missing-value report, tuning results, dataset overview, and prediction comparisons.
-
 ## 7. Machine Learning Methodology
 
-The project uses Linear Regression to predict students' final Mathematics grades.
+The project follows these steps:
 
-- **Input:** Available student-related and academic features.
-- **Target:** `G3` (Final Mathematics Grade).
-- **Algorithm:** Linear Regression.
-
-The dataset is divided into training and testing sets using an 80:20 split.
-
-A Scikit-learn preprocessing pipeline is implemented:
-
-- Numerical features are handled using median imputation.
-- Categorical features are handled using most-frequent imputation and one-hot encoding.
-- Preprocessing is fitted within the training workflow to reduce the risk of data leakage.
-
-Hyperparameter tuning is performed using GridSearchCV to select the best `fit_intercept` setting for Linear Regression.
-
-Five-fold cross-validation is used on the training data.
+1. Load the student performance dataset.
+2. Check and clean the dataset.
+3. Analyse missing values and duplicate records.
+4. Perform exploratory data analysis.
+5. Generate visualizations to understand student performance.
+6. Split the dataset into training and testing sets.
+7. Build a Linear Regression model using Scikit-learn.
+8. Perform hyperparameter tuning using GridSearchCV.
+9. Evaluate the model using different performance metrics.
+10. Save evaluation results and visualizations.
 
 ## 8. Model Evaluation
 
-The model is evaluated using:
+The Linear Regression model was evaluated using the following metrics:
 
-- **Mean Absolute Error (MAE):** Measures the average absolute difference between actual and predicted grades.
-- **Root Mean Squared Error (RMSE):** Measures prediction error while penalising larger errors more strongly.
-- **R-squared (R²):** Measures the proportion of variation in final grades explained by the model.
-- **Cross-validation:** Evaluates model performance across multiple training-data splits.
-
-The project also saves actual and predicted grades for comparison.
-
-## 9. Results
-
-The following results were obtained from the successful project execution.
-
-| Metric | Result |
+| Evaluation Metric | Result |
 |---|---:|
-| Student records analysed | 395 |
-| Training records | 316 |
-| Testing records | 79 |
-| MAE | 1.6467 |
-| RMSE | 2.3784 |
-| Test R² | 0.7241 |
-| Cross-validation mean R² | 0.8039 |
-| Cross-validation standard deviation | 0.0317 |
-| Best tuning CV RMSE | 2.0195 |
-| Best `fit_intercept` setting | True |
+| Mean Absolute Error (MAE) | 1.6467 |
+| Root Mean Squared Error (RMSE) | 2.3784 |
+| R² Score | 0.7241 |
+| Cross-Validation Mean R² | 0.8039 |
+| Cross-Validation Standard Deviation | 0.0317 |
 
-## 10. Key Findings
+### Dataset Split
 
-- The correlation between second-period grades (`G2`) and final grades (`G3`) is 0.905, indicating a strong positive relationship.
-- The correlation between absences and final grades (`G3`) is 0.034, indicating almost no linear relationship.
-- Study-time categories 3 and 4 show higher average final grades than categories 1 and 2.
-- The average final grades for study-time categories 1, 2, 3, and 4 are 10.05, 10.17, 11.40, and 11.26 respectively.
-- Earlier examination grades are useful predictors of final grades in this dataset.
+- Total records: 395
+- Training records: 316
+- Testing records: 79
 
-These findings describe associations and do not establish cause and effect.
+These results represent the model's performance on the dataset used in this project.
 
-## 11. Limitations
+## 9. Visualizations
 
-- The dataset contains only 395 student records.
-- The dataset represents students from two Portuguese schools, so results may not generalise to all schools or regions.
-- Study time is recorded in categories rather than exact hours.
-- The dataset provides the number of school absences but does not contain an attendance-percentage field.
-- Earlier grades `G1` and `G2` are used as predictors. Therefore, the model is more suitable when these grades are already available.
-- Linear Regression may not capture complex non-linear relationships.
-- The model has not been tested on a separate external dataset.
-- Predictions are estimates and are not guaranteed examination results.
+The project generates visualizations to understand student academic performance, including:
 
-## 12. Future Improvements
+- Final grade distribution
+- Correlation heatmap
+- Study time vs. final grade
+- Average grade by study time
+- First grade vs. final grade
+- Actual vs. predicted grades
 
-- Compare Linear Regression with other suitable machine learning algorithms.
+These visualizations help identify patterns and relationships in the dataset.
+
+## 10. Limitations
+
+- The model is trained using a limited dataset of 395 student records.
+- Predictions depend on the quality and features of the available dataset.
+- Actual student performance can be influenced by factors not included in the dataset.
+- The model's results should not be treated as guaranteed academic outcomes.
+
+## 11. Future Improvements
+
 - Use larger and more diverse student datasets.
-- Explore additional feature engineering techniques.
-- Perform more extensive hyperparameter tuning.
-- Evaluate the model using additional external datasets.
-- Develop a user-friendly web interface for entering student information and viewing predictions.
-- Investigate approaches to keep predicted grades within the valid 0–20 range.
+- Experiment with additional machine learning algorithms.
+- Improve prediction accuracy through feature engineering.
+- Develop a web-based application for student performance prediction.
+- Add an interactive dashboard for better visualization.
 
-## 13. Conclusion
+## 12. Conclusion
 
-This project demonstrates how Python, data analysis, visualization, and machine learning can be used to analyse student academic performance and predict final Mathematics grades.
+The Student Performance Analysis and Prediction System demonstrates how Python and Machine Learning can be used to analyse student academic data and predict final grades.
 
-The project uses the UCI Student Performance Mathematics dataset containing 395 records and 33 columns. Data preprocessing and exploratory data analysis were performed to understand the dataset and identify academic performance patterns.
+The project includes data preprocessing, exploratory data analysis, visualization, Linear Regression model development, hyperparameter tuning, and model evaluation.
 
-A Linear Regression model was developed to estimate final Mathematics grades. The model achieved an MAE of 1.6467, an RMSE of 2.3784, and an R² score of 0.7241 on the test dataset.
+It provides practical experience in applying Machine Learning techniques to an educational dataset.
 
-Overall, the project provided practical experience in data cleaning, exploratory data analysis, data visualization, machine learning model development, prediction, and evaluation.
+## 13. References
 
-## 14. References
-
-1. UCI Machine Learning Repository — Student Performance Dataset
-2. Scikit-learn Documentation
-3. Pandas Documentation
-4. NumPy Documentation
-5. Matplotlib Documentation
-6. Seaborn Documentation
+- UCI Machine Learning Repository – Student Performance Dataset: https://archive.ics.uci.edu/dataset/320/student+performance
+- Python Documentation: https://docs.python.org/3/
+- Pandas Documentation: https://pandas.pydata.org/docs/
+- Scikit-learn Documentation: https://scikit-learn.org/stable/
