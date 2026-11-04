@@ -10,11 +10,11 @@ The project includes data preprocessing, exploratory data analysis, data visuali
 
 This project uses the Student Performance Mathematics dataset from the UCI Machine Learning Repository.
 
-- **Dataset file:** `data/student_performane_dataset.csv`
-- **Dataset source:** [UCI Student Performance Dataset](https://archive.ics.uci.edu/dataset/320/student+performance)
-- **Target variable:** `G3` (final Mathematics grade)
-- **Dataset size:** 395 student records and 33 columns.
-- **Grade range:** 0 to 20.
+- **Dataset file:** `data/student_performance_dataset.csv`
+- **Dataset source:** UCI Student Performance Dataset
+- **Target variable:** `G3` (Final Mathematics Grade)
+- **Dataset size:** 395 student records and 33 columns
+- **Grade range:** 0 to 20
 
 The dataset contains demographic characteristics, family background, study habits, school-related information, and academic performance.
 
@@ -53,7 +53,7 @@ The model uses available features other than `G3` to predict the final grade. Th
 ## 5. Project Structure
 
 ```text
-Student_Performance_Analysis/
+Student-Performance-Analysis-and-Prediction-System/
 │
 ├── data/
 │   └── student_performance_dataset.csv
@@ -63,22 +63,41 @@ Student_Performance_Analysis/
 │
 ├── outputs/
 │   ├── evaluation_results/
+│   │   ├── actual_vs_predicted.csv
+│   │   ├── dataset_overview.json
+│   │   ├── descriptive_statistics.csv
+│   │   ├── evaluation_metrics.csv
+│   │   ├── hyperparameter_tuning_results.csv
+│   │   └── missing_values_report.csv
+│   │
 │   └── visualizations/
+│       ├── actual_vs_predicted.png
+│       ├── average_grade_by_study_time.png
+│       ├── bar_average_grade_by_studytime.png
+│       ├── correlation_heatmap.png
+│       ├── final_grade_distribution.png
+│       ├── first_grade_vs_final_grade.png
+│       ├── histogram_final_grades.png
+│       └── study_time_vs_final_grade.png
 │
 ├── screenshots/
+│   ├── actual_vs_predicted.png
+│   ├── correlation_heatmap.png
+│   ├── dataset_overview.png
+│   ├── evaluation_results.png
+│   ├── grade_distribution.png
+│   └── project_run.png
 │
 ├── src/
 │   ├── __init__.py
 │   └── model.py
 │
-├── venv/
-│
 ├── .gitignore
 ├── main.py
+├── Project_Report.pdf
 ├── README.md
-└── Project_Report.pdf
 └── requirements.txt
-
+```
 
 ## 6. Installation and Execution
 
@@ -86,47 +105,59 @@ Student_Performance_Analysis/
 
 Install Python if it is not already installed.
 
-### Step 2: Open the Project
+### Step 2: Clone the Repository
 
-Open the `Student_Performance_Analysis` folder in Visual Studio Code.
+```bash
+git clone https://github.com/avishekmoharana1-oss/Student-Performance-Analysis-and-Prediction-System.git
+```
 
-### Step 3: Activate the Virtual Environment
+### Step 3: Open the Project
+
+Open the downloaded project folder in Visual Studio Code.
+
+### Step 4: Create a Virtual Environment
 
 Open the VS Code terminal and run:
 
 ```bash
+python -m venv venv
+```
+
+### Step 5: Activate the Virtual Environment
+
+For Windows PowerShell:
+
+```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
-### Step 4: Install Dependencies
-
-Install the required Python libraries:
+### Step 6: Install Dependencies
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter ipykernel
+pip install -r requirements.txt
 ```
 
-### Step 5: Run the Main Python Program
-
-Execute:
+### Step 7: Run the Main Python Program
 
 ```bash
 python main.py
 ```
 
-### Step 6: Open the Jupyter Notebook
+### Step 8: Open the Jupyter Notebook
 
-Open:
+Open the following file in Visual Studio Code:
 
 `notebooks/student_performance_analysis.ipynb`
 
-Select the project's Python virtual environment as the notebook kernel.
+Select the project's Python environment as the notebook kernel and execute the cells in order.
 
-### Step 7: Run the Notebook
+If Jupyter is not installed, run:
 
-Execute the notebook cells in order, from the first cell to the last cell.
+```bash
+pip install jupyter ipykernel
+```
 
-### Step 8: View the Results
+### Step 9: View the Results
 
 After successful execution, check:
 
@@ -138,7 +169,7 @@ After successful execution, check:
 The project uses Linear Regression to predict students' final Mathematics grades.
 
 - **Input:** Available student-related and academic features.
-- **Target:** `G3` (final Mathematics grade).
+- **Target:** `G3` (Final Mathematics Grade).
 - **Algorithm:** Linear Regression.
 
 The dataset is divided into training and testing sets using an 80:20 split.
@@ -224,9 +255,9 @@ Overall, the project provided practical experience in data cleaning, exploratory
 
 ## 14. References
 
-1. UCI Machine Learning Repository — [Student Performance Dataset](https://archive.ics.uci.edu/dataset/320/student+performance)
-2. [Scikit-learn Documentation](https://scikit-learn.org/stable/)
-3. [Pandas Documentation](https://pandas.pydata.org/docs/)
-4. [NumPy Documentation](https://numpy.org/doc/)
-5. [Matplotlib Documentation](https://matplotlib.org/stable/)
-6. [Seaborn Documentation](https://seaborn.pydata.org/)
+1. UCI Machine Learning Repository — Student Performance Dataset
+2. Scikit-learn Documentation
+3. Pandas Documentation
+4. NumPy Documentation
+5. Matplotlib Documentation
+6. Seaborn Documentation
